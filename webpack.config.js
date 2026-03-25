@@ -12,6 +12,9 @@ export default {
     watchFiles: ['./src/index.html'],
   },
   devtool: 'eval-source-map',
+  dotenv: {
+    prefix: 'APP_',
+  },
   plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
   module: {
     rules: [
