@@ -7,6 +7,7 @@ export default {
   output: {
     filename: 'bundle.js',
     path: path.resolve(import.meta.dirname, 'dist'),
+    clean: true,
   },
   devServer: {
     watchFiles: ['./src/index.html'],
@@ -19,7 +20,7 @@ export default {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
@@ -28,5 +29,8 @@ export default {
         use: ['style-loader', 'css-loader'],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
 }
